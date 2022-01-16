@@ -1,5 +1,6 @@
 from microbit import *
 import music
+import random
 
 # pins
 Buzzer_pin = pin0
@@ -16,6 +17,8 @@ while True:
 
     old_button = button
 
+    crash = CrashSensor_pin.read_digital();
+
     if keyboard_value >= 0 and keyboard_value < 30:
         button = "A"
     if keyboard_value >= 30 and keyboard_value < 70:
@@ -26,6 +29,9 @@ while True:
         button = "D"
     if keyboard_value >= 150 and keyboard_value < 600:
         button = "E"
+
+    print((keyboard_value, crash * 100, 0))
+
     if keyboard_value > 600:
         button = ""
 
@@ -35,7 +41,7 @@ while True:
         display.show(button)
 
     myDuration = 100
-    if CrashSensor_pin.read_digital() != 1:
+    if crash != 1:
         myDuration = 200
     myWait = True
 
