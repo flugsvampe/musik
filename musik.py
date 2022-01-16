@@ -22,24 +22,24 @@ while True:
     keyboard_value = Keyboard_pin.read_analog()
 
     if keyboard_value >= 0 and keyboard_value < 30:
-        print("Knapp A")
-        music.pitch(440, 6)
+        print("A")
+        music.pitch(440)
 
     if keyboard_value >= 30 and keyboard_value < 70:
-        print("Knapp B")
-        music.pitch(440, 6)
+        print("B")
+        music.pitch(494)
 
     if keyboard_value >= 70 and keyboard_value < 110:
-        print("Knapp 1")
-        music.pitch(440, 6)
+        print("C")
+        music.pitch(523)
 
     if keyboard_value >= 110 and keyboard_value < 150:
-        print("Knapp 2")
-        music.pitch(440, 6)
+        print("D")
+        music.pitch(587)
 
     if keyboard_value >= 150 and keyboard_value < 600:
-        print("Knapp 3")
-        music.pitch(440, 6)
+        print("E")
+        music.pitch(659)
 
     if keyboard_value > 600:
         music.stop()
